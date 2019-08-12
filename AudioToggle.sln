@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioToggle", "AudioToggle\AudioToggle.csproj", "{CE357FE4-A5AC-4A2B-8C7F-2CCD70A64C82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioToggle.Wrappers", "AudioToggle.Wrappers\AudioToggle.Wrappers.csproj", "{D2570CB5-E647-44AB-A247-B2DBB245F1C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioToggle.Models", "AudioToggle.Models\AudioToggle.Models.csproj", "{D1DC3313-8074-40F5-B135-6BE9FA5068E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE357FE4-A5AC-4A2B-8C7F-2CCD70A64C82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE357FE4-A5AC-4A2B-8C7F-2CCD70A64C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE357FE4-A5AC-4A2B-8C7F-2CCD70A64C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE357FE4-A5AC-4A2B-8C7F-2CCD70A64C82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2570CB5-E647-44AB-A247-B2DBB245F1C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2570CB5-E647-44AB-A247-B2DBB245F1C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2570CB5-E647-44AB-A247-B2DBB245F1C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2570CB5-E647-44AB-A247-B2DBB245F1C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1DC3313-8074-40F5-B135-6BE9FA5068E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1DC3313-8074-40F5-B135-6BE9FA5068E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1DC3313-8074-40F5-B135-6BE9FA5068E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1DC3313-8074-40F5-B135-6BE9FA5068E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9E45D1C-E491-421D-8F20-C4A175C9609A}
+	EndGlobalSection
+EndGlobal
