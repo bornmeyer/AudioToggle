@@ -38,18 +38,6 @@ namespace AudioToggle.ViewModels
             }
         }
 
-        public DisplayMode CurrentDisplayMode
-        {
-            get
-            {
-                return _currentDisplayMode;
-            }
-            set
-            {
-                _currentDisplayMode = value;
-                OnPropertyChanged();
-            }
-        }
 
         public ObservableCollection<SelectorPanelViewModel> SelectorPanelViewModels
         {

@@ -23,16 +23,16 @@ namespace AudioToggle.Models
 
         // Methods
 
-        public Configuration Read()
+        public Mapping Read()
         {
-            Configuration result = null;
+            Mapping result = null;
 
             var filePath = _configFilePathLocator.Locate();
 
             using (StreamReader fileReader = File.OpenText(filePath.FullName))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                result = (Configuration)serializer.Deserialize(fileReader, typeof(Configuration));
+                result = (Mapping)serializer.Deserialize(fileReader, typeof(Mapping));
             }
 
             return result;

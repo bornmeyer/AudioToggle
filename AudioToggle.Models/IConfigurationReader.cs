@@ -8,6 +8,6 @@ namespace AudioToggle.Models
 {
     public interface IConfigurationReader
     {
-        Configuration Read();
+        Mapping Read();
     }
 }

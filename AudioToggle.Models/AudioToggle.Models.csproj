@@ -49,8 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AudioDevice.cs" />
-    <Compile Include="Configuration.cs" />
-    <Compile Include="ConfigurationNode.cs" />
+    <Compile Include="Mapping.cs" />
+    <Compile Include="MappingNode.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="DefaultAudioDeviceManager.cs" />
     <Compile Include="DefaultAudioSwitch.cs" />

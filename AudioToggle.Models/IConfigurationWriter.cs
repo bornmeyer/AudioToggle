@@ -8,6 +8,6 @@ namespace AudioToggle.Models
 {
     public interface IConfigurationWriter
     {
-        void Write(Configuration configuration);
+        void Write(Mapping configuration);
     }
 }

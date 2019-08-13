@@ -12,7 +12,7 @@ namespace AudioToggle.Models
         private readonly IAudioDeviceManager _audioDeviceManager = null;
         private readonly IConfigurationReader _configurationReader = null;
         private readonly IConfigurationWriter _configurationWriter = null;
-        private readonly Configuration _configuration = null;
+        private readonly Mapping _configuration = null;
         private DisplayMode _lastDisplayNode = null;
 
         // Constructors
@@ -48,7 +48,7 @@ namespace AudioToggle.Models
 
         }
 
-        private Configuration CreateDefaultConfigurationIfNecessary(IDisplayManager displayManager)
+        private Mapping CreateDefaultConfigurationIfNecessary(IDisplayManager displayManager)
         {
             var configuration = _configurationReader.Read();
 
@@ -59,18 +59,13 @@ namespace AudioToggle.Models
                 var defaultAudioDevice = _audioDeviceManager.GetAllDevices().FirstOrDefault(x => x.CurrentlyDefault);
                 foreach (var current in allDisplayModes)
                 {
-                    var newNode = new ConfigurationNode(defaultAudioDevice, current);
+                    var newNode = new MappingNode(defaultAudioDevice, current);
                     configuration.Nodes.Add(newNode);
                 }
 
                 _configurationWriter.Write(configuration);
             }
             return configuration;
-        }
-
-        public void Switch(DisplayMode displayMode)
-        {
-            throw new NotImplementedException();
         }
 
         public void UpdateMapping(DisplayMode displayMode, AudioDevice audioDevice)
@@ -80,7 +75,7 @@ namespace AudioToggle.Models
             _configurationWriter.Write(_configuration);
         }
 
-        public Configuration GetConfigMapping()
+        public Mapping GetConfigMapping()
         {
             return _configuration;
         }

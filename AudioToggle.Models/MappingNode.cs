@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AudioToggle.Models
 {
-    public class ConfigurationNode
+    public class MappingNode
     {
         // Properties
 
@@ -24,13 +24,13 @@ namespace AudioToggle.Models
 
         // Constructors
 
-        public ConfigurationNode(AudioDevice audioDevice, DisplayMode displayMode)
+        public MappingNode(AudioDevice audioDevice, DisplayMode displayMode)
         {
             AudioDeviceId = audioDevice.DeviceId;
             PresentationDisplayMode = displayMode.PresentationDisplayMode;
         }
 
-        public ConfigurationNode()
+        public MappingNode()
         {
 
         }

@@ -22,7 +22,7 @@ namespace AudioToggle.Models
             _configFilePathLocator = configFilePathLocator;
         }
 
-        public void Write(Configuration configuration)
+        public void Write(Mapping configuration)
         {
             var filePath = _configFilePathLocator.Locate();
             using (StreamWriter file = File.CreateText(filePath.FullName))

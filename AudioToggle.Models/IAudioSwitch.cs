@@ -8,10 +8,8 @@ namespace AudioToggle.Models
 {
     public interface IAudioSwitch
     {
-        void Switch(DisplayMode displayMode);
-
         void UpdateMapping(DisplayMode displayMode, AudioDevice audioDevice);
 
-        Configuration GetConfigMapping();
+        Mapping GetConfigMapping();
     }
 }

@@ -13,10 +13,6 @@ namespace AudioToggle.ViewModels
             get;
         }
 
-        DisplayMode CurrentDisplayMode
-        {
-            get;
-        }
 
         ObservableCollection<SelectorPanelViewModel> SelectorPanelViewModels
         {
