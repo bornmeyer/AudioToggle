@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AudioDevice.cs" />
+    <Compile Include="IPresentationDisplayModeReader.cs" />
+    <Compile Include="IPulseGiver.cs" />
     <Compile Include="Mapping.cs" />
     <Compile Include="MappingNode.cs" />
     <Compile Include="Constants.cs" />
@@ -68,7 +70,9 @@
     <Compile Include="IConfigurationWriter.cs" />
     <Compile Include="IDisplayManager.cs" />
     <Compile Include="PresentationDisplayMode.cs" />
+    <Compile Include="PresentationDisplayModeReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimerPulseGiver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

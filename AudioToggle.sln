@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioToggle.Wrappers", "Aud
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioToggle.Models", "AudioToggle.Models\AudioToggle.Models.csproj", "{D1DC3313-8074-40F5-B135-6BE9FA5068E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioToggle.Models.Tests", "AudioToggle.Models.Tests\AudioToggle.Models.Tests.csproj", "{9DD422CC-30DB-4112-9019-2B30BDC917C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioToggle.Tests", "AudioToggle.Tests\AudioToggle.Tests.csproj", "{1B5B004A-34E1-4C1A-8744-B3F5193377F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{D1DC3313-8074-40F5-B135-6BE9FA5068E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1DC3313-8074-40F5-B135-6BE9FA5068E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1DC3313-8074-40F5-B135-6BE9FA5068E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DD422CC-30DB-4112-9019-2B30BDC917C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DD422CC-30DB-4112-9019-2B30BDC917C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DD422CC-30DB-4112-9019-2B30BDC917C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DD422CC-30DB-4112-9019-2B30BDC917C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B5B004A-34E1-4C1A-8744-B3F5193377F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B5B004A-34E1-4C1A-8744-B3F5193377F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B5B004A-34E1-4C1A-8744-B3F5193377F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B5B004A-34E1-4C1A-8744-B3F5193377F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

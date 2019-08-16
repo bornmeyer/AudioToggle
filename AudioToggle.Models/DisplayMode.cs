@@ -37,7 +37,7 @@ namespace AudioToggle.Models
             Boolean result = false;
             if (obj is DisplayMode other)
             {
-                result = (Int32)other.PresentationDisplayMode == (Int32)PresentationDisplayMode;
+                result = other.PresentationDisplayMode == PresentationDisplayMode;
             }
             return result;
         }

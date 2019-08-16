@@ -18,6 +18,8 @@ namespace AudioToggle.NinjectModules
             Kernel.Bind<IConfigurationWriter>().To<DefaultConfigurationWriter>();
             Kernel.Bind<IConfigurationReader>().To<DefaultConfigurationReader>();
             Kernel.Bind<IConfigFilePathLocator>().To<DefaultConfigFilePathLocator>();
+            Kernel.Bind<IPulseGiver<Int32>>().To<TimerPulseGiver>();
+            Kernel.Bind<IPresentationDisplayModeReader>().To<PresentationDisplayModeReader>();
         }
     }
 }

@@ -17,55 +17,35 @@ namespace AudioToggle.Models
 
         // Fields
 
-        private Timer _pollTimer = null;
+        private readonly IPulseGiver<Int32> _pollPulse = null;
+        private readonly IPresentationDisplayModeReader _presentationDisplayModeReader = null;
 
         // Constructors
 
-        public DefaultDisplayManager()
-        {            
-            _pollTimer = new Timer();
+        public DefaultDisplayManager(IPulseGiver<Int32> pulseGiver, IPresentationDisplayModeReader presentationDisplayModeReader)
+        {
+            _pollPulse = pulseGiver;
+            _presentationDisplayModeReader = presentationDisplayModeReader;
+
+            _pollPulse.Pulse += Poll;
         }
 
         // Methods
 
         public void StartPolling(Int32 pollingIntervalInMs = 50)
         {
-            _pollTimer.Elapsed += (sender, e) => Poll();
-            _pollTimer.Interval = pollingIntervalInMs;            
-            _pollTimer.Start();
+            _pollPulse.Start(pollingIntervalInMs);
         }
 
         private void Poll()
         {
-            OnDisplayModeChanged(ReadPresentationDisplayMode());
+            OnDisplayModeChanged(_presentationDisplayModeReader.ReadPresentationDisplayMode());
         }
         
-        private PresentationDisplayMode ReadPresentationDisplayMode()
-        {
-            
-            Int32 numPathArrayElements;
-            Int32 numModeInfoArrayElements;
-
-            // query active paths from the current computer.
-            if (DisplayWmiApiWrapper.GetDisplayConfigBufferSizes(DisplayWmiApiWrapper.QueryDisplayFlags.OnlyActivePaths, out numPathArrayElements,
-                                                           out numModeInfoArrayElements) == 0)
-            {
-                var pathInfoArray = new DisplayWmiApiWrapper.DisplayConfigPathInfo[numPathArrayElements];
-                var modeInfoArray = new DisplayWmiApiWrapper.DisplayConfigModeInfo[numModeInfoArrayElements];
-                DisplayWmiApiWrapper.DisplayConfigTopologyId currentTopologyId = DisplayWmiApiWrapper.DisplayConfigTopologyId.Zero;
-
-                var status = DisplayWmiApiWrapper.QueryDisplayConfig(DisplayWmiApiWrapper.QueryDisplayFlags.DatabaseCurrent,
-                                        ref numPathArrayElements, pathInfoArray, ref numModeInfoArrayElements,
-                                        modeInfoArray, out currentTopologyId);
-                return ((PresentationDisplayMode)currentTopologyId);
-
-            }
-            return PresentationDisplayMode.Zero;
-        }
 
         public void StopPolling()
         {
-            _pollTimer.Stop();
+            _pollPulse.Stop();
         }
 
         private void OnDisplayModeChanged(PresentationDisplayMode displayMode)
@@ -78,12 +58,13 @@ namespace AudioToggle.Models
             return Enum.GetValues(typeof(PresentationDisplayMode))
                 .Cast<PresentationDisplayMode>()
                 .Where(x => x != PresentationDisplayMode.ForceUint32 && x != PresentationDisplayMode.Zero)
+                .OrderBy(x => x)
                 .Select(x => new DisplayMode(x));
         }
 
         public DisplayMode GetCurrentDisplayMode()
         {
-            var current = ReadPresentationDisplayMode();
+            var current = _presentationDisplayModeReader.ReadPresentationDisplayMode();
             return new DisplayMode(current);
         }
     }
